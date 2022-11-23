@@ -1,5 +1,5 @@
 const isRunningFrontEndLocally = "http://localhost:3000";
-const BASE_URL = isRunningFrontEndLocally
+export const BASE_URL = isRunningFrontEndLocally
   ? "http://127.0.0.1:6060"
   : "needtoputbackendurlhere";
 
