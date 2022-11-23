@@ -20,11 +20,11 @@ const ProductPage = () => {
       </h2>
       {Products.map((product) => {
         return (
-          <>
-            <h3 key={product.id}>{product.name}</h3>
-            <img key={product.id} src={product.image} alt={product.name} />
+          <div key={product.id}>
+            <h3>{product.name}</h3>
+            <img src={product.image} alt={product.name} />
             <CartButton id={product.id} />
-          </>
+          </div>
         );
       })}
     </>
