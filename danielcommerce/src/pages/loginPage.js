@@ -1,3 +1,5 @@
+import LoginButton from "../components/LoginButton";
+
 const loginPage = () => {
   return (
     <>
@@ -10,9 +12,7 @@ const loginPage = () => {
           <input type="submit" value="Submit" />
         </div>
       </form>
-      <button onClick={() => {}} className="loginbutton">
-        Login
-      </button>
+      <LoginButton />
     </>
   );
 };

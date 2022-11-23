@@ -1,13 +1,23 @@
 import PropTypes from "prop-types";
 import { configureStore } from "@reduxjs/toolkit";
 import { useSelector, useDispatch } from "react-redux";
-import { incrementByAmount } from "../features/cart/cartSlice";
+import {
+  incrementByAmount,
+  decrementByAmount,
+} from "../features/cart/cartSlice";
 
 const CartButton = ({ id }) => {
   // const count = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   return (
-    <button onClick={() => dispatch(incrementByAmount(id))}>Add to Cart</button>
+    <>
+      <button onClick={() => dispatch(incrementByAmount(id))}>
+        Add to Cart
+      </button>
+      <button onClick={() => dispatch(decrementByAmount(id))}>
+        Delete from Cart
+      </button>
+    </>
   );
 };
 CartButton.propTypes = {

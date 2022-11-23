@@ -7,6 +7,7 @@ import ProductPage from "./pages/products";
 import SignUp from "./pages/signupPage";
 import CartPage from "./pages/cartPage";
 import LoginPage from "./pages/loginPage";
+import NavBar from "./components/navBar";
 
 // const Button = styled.button`
 //   background: green;
@@ -29,6 +30,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
         </Routes>
       </BrowserRouter>
+      <NavBar />
     </Provider>
   );
 }
