@@ -26,6 +26,6 @@ const QuantityButton = ({ id }) => {
 };
 // below is representing the object key which is a string
 QuantityButton.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };
 export default QuantityButton;

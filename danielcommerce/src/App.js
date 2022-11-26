@@ -8,7 +8,7 @@ import ProductPage from "./pages/products";
 import CartPage from "./pages/cartPage";
 import LoginPage from "./pages/loginPage";
 import NavBar from "./components/navBar";
-
+import SingleProductPage from "./pages/singleProductPage";
 // const Button = styled.button`
 //   background: green;
 //   color: white;
@@ -28,6 +28,7 @@ function App() {
           <Route path="/" element={<ProductPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/product" element={<SingleProductPage />} />
         </Routes>
       </BrowserRouter>
       <NavBar />
