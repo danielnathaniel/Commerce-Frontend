@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 // import Products from "../data/productList";
 import { Link } from "react-router-dom";
 import CartButton from "../components/cartBtn";
-import ProductButton from "../components/ProductButton";
 
 import { BASE_URL } from "../utils/api";
 
 const ProductPage = () => {
+  console.log("url", BASE_URL);
   const [returnedmsg, setMessage] = useState([]);
   useEffect(() => {
     const getApiData = async () => {

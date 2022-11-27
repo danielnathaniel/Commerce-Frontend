@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { BASE_URL } from "../../utils/api";
-import { useNavigate } from "react-router-dom";
 
 const initialState = {};
 
