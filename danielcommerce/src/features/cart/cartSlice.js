@@ -16,7 +16,6 @@ export const cartSlice = createSlice({
       // const newQuantity = state[action.payload] || 1;
       // state[action.payload] = newQuantity;
       // console.log(newQuantity);
-
       fetch(`${BASE_URL}/api/cart/product/${action.payload.id}`, {
         method: "POST",
         headers: {

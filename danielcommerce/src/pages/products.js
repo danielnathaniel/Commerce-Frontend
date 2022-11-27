@@ -33,6 +33,7 @@ const ProductPage = () => {
 
   return (
     <>
+      <h1>DANIEL COMMERCE</h1>
       <h2>
         <Link to="/cart" className="cart-btn">
           VIEW CART
@@ -47,11 +48,15 @@ const ProductPage = () => {
         return (
           <div key={product._id}>
             <h3>{product.name}</h3>
-            <img src={product.image} alt={product.name} />
-            <CartButton id={product._id} />
+            {/* https://stackoverflow.com/questions/57114044/how-to-add-a-route-to-image-in-react-js{" "} */}
+            <br></br>
             <Link to={`/product/${product._id}`} className="product-btn">
-              Product Details
+              <img src={product.image} alt={product.name} />
             </Link>
+            <br></br>
+            <CartButton id={product._id} />
+            <br></br>
+            <br></br>
           </div>
         );
       })}
