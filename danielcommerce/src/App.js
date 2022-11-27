@@ -28,7 +28,7 @@ function App() {
           <Route path="/" element={<ProductPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/product" element={<SingleProductPage />} />
+          <Route path="/product/:id" element={<SingleProductPage />} />
         </Routes>
       </BrowserRouter>
       <NavBar />

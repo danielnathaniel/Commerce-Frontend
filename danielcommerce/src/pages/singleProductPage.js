@@ -1,26 +1,48 @@
-import React from "react";
-import { useSelector } from "react-redux";
-//import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import styled from "styled-components";
-import productList from "../data/productList";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import QuantityButton from "../components/quantityBtn";
+import { BASE_URL } from "../utils/api";
 
 const SingleProductPage = () => {
-  // state.cart, the cart portion is coming from the name from cart slice
-  const cart = useSelector((state) => state.cart);
-  return Object.entries(cart).map(([itemId, quantity]) => {
-    const foundProduct = productList.find((product) => product.id == itemId);
-    // console.log({ foundProduct });
+  const params = useParams();
 
-    return (
-      <div key={itemId}>
-        {/* <h3>{itemId}</h3> */}
-        <h3>{foundProduct.name}</h3>
-        <img src={foundProduct.image} alt={foundProduct.name} />
-        <h4>Quantity: {quantity}</h4>
-        <QuantityButton id={parseInt(itemId)} />
-      </div>
-    );
-  });
+  console.log(params.id);
+  const [returnedmsg, setMessage] = useState([]);
+  useEffect(() => {
+    const getApiData = async () => {
+      try {
+        const res = await fetch(`${BASE_URL}/api/products/${params.id}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (res.ok) {
+          const jsonResp = await res.json();
+          setMessage(jsonResp);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    getApiData();
+  }, []);
+  return (
+    <div key={returnedmsg._id}>
+      {/* <h3>{itemId}</h3> */}
+      <h3>{returnedmsg.name}</h3>
+      <img src={returnedmsg.image} alt={returnedmsg.name} />
+      <h4>
+        DESCRIPTION: <br></br>
+        {returnedmsg.description}
+      </h4>
+    </div>
+    // return Object.entries(returnedmsg).map(([itemId, data]) => {
+
+    //   );
+    // });
+  );
 };
+
 export default SingleProductPage;

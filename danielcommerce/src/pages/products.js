@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 // import Products from "../data/productList";
 import { Link } from "react-router-dom";
 import CartButton from "../components/cartBtn";
+import ProductButton from "../components/ProductButton";
+
 import { BASE_URL } from "../utils/api";
 
 const ProductPage = () => {
@@ -47,6 +49,9 @@ const ProductPage = () => {
             <h3>{product.name}</h3>
             <img src={product.image} alt={product.name} />
             <CartButton id={product._id} />
+            <Link to={`/product/${product._id}`} className="product-btn">
+              Product Details
+            </Link>
           </div>
         );
       })}

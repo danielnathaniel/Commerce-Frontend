@@ -1,17 +1,26 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
+// import { displayProduct } from "../features/cart/cartSlice";
+// import { useDispatch } from "react-redux";
+// import { useNavigate } from "react-router-dom";
 
-import { addToCart } from "../features/cart/cartSlice";
+// const ProductButton = ({ id }) => {
+//   // const history = useHistory();
 
-const CartButton = ({ id }) => {
-  // const count = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
-  return (
-    <>
-      <button onClick={() => dispatch(addToCart(id))}>Add to Cart</button>
-    </>
-  );
-};
-CartButton.propTypes = {
-  id: PropTypes.number.isRequired,
-};
-export default CartButton;
+//   // navigate("/product");
+//   return (
+//     <div>
+//       <button
+//         onClick={() => {
+//           dispatch(displayProduct({ id }));
+//           console.log("id", id);
+//         }}
+//       >
+//         View Product Details
+//       </button>
+//     </div>
+//   );
+// };
+// ProductButton.propTypes = {
+//   id: PropTypes.string.isRequired,
+// };
+// export default ProductButton;

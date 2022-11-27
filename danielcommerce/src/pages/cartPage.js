@@ -56,6 +56,7 @@ const CartPage = () => {
     // const foundProduct = returnedmsg.find((product) => product._id == itemId);
     // const productDetails = FindProductDetails(foundProduct._id);
     // console.log({ foundProduct });
+    // console.log("data", data);
 
     return (
       <div key={data._id}>
@@ -63,7 +64,7 @@ const CartPage = () => {
         <h3>{data.name}</h3>
         <img src={data.image} alt={data.name} />
         <h4>Quantity: {data.quantity}</h4>
-        <QuantityButton id={data._id} />
+        <QuantityButton id={data._id} quantity={data.quantity} />
       </div>
     );
   });
