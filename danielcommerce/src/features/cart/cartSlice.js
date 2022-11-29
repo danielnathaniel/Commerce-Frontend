@@ -22,7 +22,7 @@ export const cartSlice = createSlice({
           Authorization: `Bearer ${action.payload.token}`,
         },
         body: JSON.stringify({ quantity: 1 }),
-      }).then((response) => console.log(response.json()));
+      }).then((response) => console.log("response", response.json()));
     },
     updateQuantity: (state, action) => {
       // state[action.payload] = (state[action.payload] || 1) - 1;
@@ -49,19 +49,10 @@ export const cartSlice = createSlice({
       // need to reload the page below because item deletes but page doesnt re render
       window.location.reload(false);
     },
-    displayProduct: (state, action) => {
-      fetch(`${BASE_URL}/api/products/${action.payload.id}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }).then((response) => console.log(response.json()));
-    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addToCart, updateQuantity, deleteFromCart, displayProduct } =
-  cartSlice.actions;
+export const { addToCart, updateQuantity, deleteFromCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

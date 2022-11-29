@@ -4,17 +4,30 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Auth0Provider } from "@auth0/auth0-react";
-import env from "react-dotenv";
+// import env from "react-dotenv";
+// import {
+//   transitions,
+//   positions,
+//   Provider as AlertProvider,
+// } from "@blaumaus/react-alert";
+// import AlertTemplate from "react-alert-template-basic";
 
+// const options = {
+//   // you can also just use 'bottom center'
+//   position: positions.BOTTOM_CENTER,
+//   timeout: 5000,
+//   offset: "30px",
+//   // you can also just use 'scale'
+//   transition: transitions.SCALE,
+// };
 const root = ReactDOM.createRoot(document.getElementById("root"));
-console.log("auth", env.AUTH0DOMAIN, env.AUTH0CLIENTID);
 root.render(
   <React.StrictMode>
     <Auth0Provider
-      domain={env.AUTH0DOMAIN}
-      clientId={env.AUTH0CLIENTID}
+      domain={process.env.REACT_APP_AUTH0DOMAIN}
+      clientId={process.env.REACT_APP_AUTH0CLIENTID}
       redirectUri={window.location.origin}
-      audience={env.AUTH0AUDIENCE}
+      audience={process.env.REACT_APP_AUTH0AUDIENCE}
     >
       <App />
     </Auth0Provider>

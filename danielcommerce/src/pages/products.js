@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 // import Products from "../data/productList";
 import { Link } from "react-router-dom";
 import CartButton from "../components/cartBtn";
-
 import { BASE_URL } from "../utils/api";
+import GlobalProductStyle from "../components/Container.styled";
 
 const ProductPage = () => {
   console.log("url", BASE_URL);
@@ -33,21 +33,23 @@ const ProductPage = () => {
 
   return (
     <>
-      <h1>DANIEL COMMERCE</h1>
-      <h2>
+      <GlobalProductStyle />
+      <h3>
         <Link to="/cart" className="cart-btn">
           VIEW CART
         </Link>
-      </h2>
-      <h2>
+      </h3>
+      <h3>
         <Link to="/login" className="login-btn">
           LOG IN
         </Link>
-      </h2>
+      </h3>
       {returnedmsg.map((product) => {
         return (
           <div key={product._id}>
-            <h3>{product.name}</h3>
+            <h4 style={{ color: "blue" }}>{product.name}</h4>
+            <br></br>
+            <br></br>
             {/* https://stackoverflow.com/questions/57114044/how-to-add-a-route-to-image-in-react-js{" "} */}
             <br></br>
             <Link to={`/product/${product._id}`} className="product-btn">

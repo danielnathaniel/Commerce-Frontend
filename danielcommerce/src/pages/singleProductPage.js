@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import QuantityButton from "../components/quantityBtn";
-import { BASE_URL } from "../utils/api";
+// import { BASE_URL } from "../utils/api";
 
 const SingleProductPage = () => {
+  console.log("test123", useState());
   const params = useParams();
-
+  const BASE_URL = "http://127.0.0.1:6060";
   console.log(params.id);
   const [returnedmsg, setMessage] = useState([]);
   useEffect(() => {
@@ -31,7 +31,7 @@ const SingleProductPage = () => {
   return (
     <div key={returnedmsg._id}>
       {/* <h3>{itemId}</h3> */}
-      <h3>{returnedmsg.name}</h3>
+      <h4>{returnedmsg.name}</h4>
       <img src={returnedmsg.image} alt={returnedmsg.name} />
       <h4>
         DESCRIPTION: <br></br>

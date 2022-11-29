@@ -12,10 +12,11 @@ const Profile = () => {
       {/* <img src={user.picture} alt={user.name} />
       <h2>{user.name}</h2>
       <p>{user.email}</p> */}
-      <div>LOGGED IN</div>
+      <h4>STATUS: LOGGED IN</h4>
+      <br></br>
     </div>
   ) : (
-    <div>NOT LOGGED IN</div>
+    <h4>STATUS: NOT LOGGED IN</h4>
   );
 };
 

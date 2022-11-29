@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
-import { configureStore } from "@reduxjs/toolkit";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState, useEffect } from "react";
 import { updateQuantity, deleteFromCart } from "../features/cart/cartSlice";

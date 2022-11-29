@@ -5,6 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 // import styled from "styled-components";
 import QuantityButton from "../components/quantityBtn";
 import { BASE_URL } from "../utils/api";
+// import CartStyle from "../components/CartStyled";
 
 const CartPage = () => {
   const { getAccessTokenSilently } = useAuth0();
@@ -60,8 +61,9 @@ const CartPage = () => {
 
     return (
       <div key={data._id}>
+        {/* <CartStyle /> */}
         {/* <h3>{itemId}</h3> */}
-        <h3>{data.name}</h3>
+        <h4>{data.name}</h4>
         <img src={data.image} alt={data.name} />
         <h4>Quantity: {data.quantity}</h4>
         <QuantityButton id={data._id} quantity={data.quantity} />

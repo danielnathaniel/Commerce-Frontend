@@ -1,5 +1,5 @@
 // import PropTypes from "prop-types";
-// import { displayProduct } from "../features/cart/cartSlice";
+// import {  } from "../features/cart/cartSlice";
 // import { useDispatch } from "react-redux";
 // import { useNavigate } from "react-router-dom";
 

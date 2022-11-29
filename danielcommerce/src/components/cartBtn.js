@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
-import { configureStore } from "@reduxjs/toolkit";
-import { useSelector, useDispatch } from "react-redux";
-import { addToCart, decrementByAmount } from "../features/cart/cartSlice";
+import { useDispatch } from "react-redux";
+import { addToCart, updateQuantity } from "../features/cart/cartSlice";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState, useEffect } from "react";
 
@@ -21,7 +20,18 @@ const CartButton = ({ id }) => {
   const dispatch = useDispatch();
   return (
     <>
-      <button onClick={() => dispatch(addToCart({ id, token }))}>
+      <button
+        onClick={() => {
+          dispatch(addToCart({ id, token }));
+          // console.log("added to cart");
+          // alert("Total Quantity Added To Cart");
+          // } else {
+          //   quantity = quantity + 1;
+          //   console.log("updated quantity", quantity);
+          //   dispatch(updateQuantity({ id, token, quantity }));
+          // }
+        }}
+      >
         Add to Cart
       </button>
     </>

@@ -8,7 +8,9 @@ import ProductPage from "./pages/products";
 import CartPage from "./pages/cartPage";
 import LoginPage from "./pages/loginPage";
 import NavBar from "./components/navBar";
+import Footer from "./components/footer";
 import SingleProductPage from "./pages/singleProductPage";
+
 // const Button = styled.button`
 //   background: green;
 //   color: white;
@@ -23,15 +25,16 @@ import SingleProductPage from "./pages/singleProductPage";
 function App() {
   return (
     <Provider store={store}>
+      <NavBar />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<ProductPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/product/:id" element={<SingleProductPage />} />
+          <Route path="product/:id" element={<SingleProductPage />} />
         </Routes>
       </BrowserRouter>
-      <NavBar />
+      <Footer />
     </Provider>
   );
 }
