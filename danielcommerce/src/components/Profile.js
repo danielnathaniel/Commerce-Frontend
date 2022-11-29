@@ -16,7 +16,10 @@ const Profile = () => {
       <br></br>
     </div>
   ) : (
-    <h4>STATUS: NOT LOGGED IN</h4>
+    <>
+      <h4>STATUS: NOT LOGGED IN</h4>
+      <h5>*Please Log In To Add/Delete/Update Cart*</h5>
+    </>
   );
 };
 

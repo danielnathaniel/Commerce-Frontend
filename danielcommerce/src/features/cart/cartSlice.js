@@ -2,19 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 import { BASE_URL } from "../../utils/api";
 
 const initialState = {};
-
-// what should state look like after adding one product
-
+// https://www.bezkoder.com/redux-toolkit-example-crud/
+//https://www.softkraft.co/how-to-setup-slices-with-redux-toolkit/
+// comment
 export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
+    // endpoints
     addToCart: (state, action) => {
-      // console.log("console", action.payload.token);
-      // zero would be false so it would use the or operator to be 1
-      // const newQuantity = state[action.payload] || 1;
-      // state[action.payload] = newQuantity;
-      // console.log(newQuantity);
       fetch(`${BASE_URL}/api/cart/product/${action.payload.id}`, {
         method: "POST",
         headers: {
@@ -25,9 +21,6 @@ export const cartSlice = createSlice({
       }).then((response) => console.log("response", response.json()));
     },
     updateQuantity: (state, action) => {
-      // state[action.payload] = (state[action.payload] || 1) - 1;
-      // const newQuantity = state[action.payload] || 1;
-      // state[action.payload] = newQuantity;
       fetch(`${BASE_URL}/api/cart/product/${action.payload.id}`, {
         method: "PATCH",
         headers: {
@@ -38,7 +31,6 @@ export const cartSlice = createSlice({
       }).then((response) => console.log(response.json()));
     },
     deleteFromCart: (state, action) => {
-      // delete state[action.payload];
       fetch(`${BASE_URL}/api/cart/product/${action.payload.id}`, {
         method: "DELETE",
         headers: {
@@ -46,7 +38,7 @@ export const cartSlice = createSlice({
           Authorization: `Bearer ${action.payload.token}`,
         },
       });
-      // need to reload the page below because item deletes but page doesnt re render
+      // need to reload the page below because item deletes but page doesnt re render - react redux toolkit should help with this but had to stop because of limited time
       window.location.reload(false);
     },
   },

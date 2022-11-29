@@ -31,7 +31,7 @@ const SingleProductPage = () => {
   return (
     <div key={returnedmsg._id}>
       {/* <h3>{itemId}</h3> */}
-      <h4>{returnedmsg.name}</h4>
+      <h4 style={{ color: "blue" }}>{returnedmsg.name}</h4>
       <img src={returnedmsg.image} alt={returnedmsg.name} />
       <h4>
         DESCRIPTION: <br></br>

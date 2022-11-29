@@ -1,7 +1,4 @@
 import { useState, useEffect } from "react";
-//import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import styled from "styled-components";
-// import Products from "../data/productList";
 import { Link } from "react-router-dom";
 import CartButton from "../components/cartBtn";
 import { BASE_URL } from "../utils/api";
@@ -11,8 +8,11 @@ const ProductPage = () => {
   console.log("url", BASE_URL);
   const [returnedmsg, setMessage] = useState([]);
   useEffect(() => {
+    // async = must return a promise because
+    //https://www.robinwieruch.de/react-hooks-fetch-data/
     const getApiData = async () => {
       try {
+        // Await = waited for promise from async
         const res = await fetch(`${BASE_URL}/api/products`, {
           method: "GET",
           headers: {
@@ -47,12 +47,12 @@ const ProductPage = () => {
       {returnedmsg.map((product) => {
         return (
           <div key={product._id}>
-            <h4 style={{ color: "blue" }}>{product.name}</h4>
             <br></br>
             <br></br>
             {/* https://stackoverflow.com/questions/57114044/how-to-add-a-route-to-image-in-react-js{" "} */}
             <br></br>
             <Link to={`/product/${product._id}`} className="product-btn">
+              <h4 style={{ color: "blue" }}>{product.name}</h4>
               <img src={product.image} alt={product.name} />
             </Link>
             <br></br>
