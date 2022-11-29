@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import { BASE_URL } from "../utils/api";
+import { BASE_URL } from "../utils/api";
 
 const SingleProductPage = () => {
-  console.log("test123", useState());
   const params = useParams();
-  const BASE_URL = "http://127.0.0.1:6060";
   console.log(params.id);
   const [returnedmsg, setMessage] = useState([]);
   useEffect(() => {
