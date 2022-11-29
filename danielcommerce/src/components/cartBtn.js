@@ -16,20 +16,12 @@ const CartButton = ({ id }) => {
     getApiData();
   }, []);
 
-  // const count = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   return (
     <>
       <button
         onClick={() => {
           dispatch(addToCart({ id, token }));
-          // console.log("added to cart");
-          // alert("Total Quantity Added To Cart");
-          // } else {
-          //   quantity = quantity + 1;
-          //   console.log("updated quantity", quantity);
-          //   dispatch(updateQuantity({ id, token, quantity }));
-          // }
         }}
       >
         Add to Cart

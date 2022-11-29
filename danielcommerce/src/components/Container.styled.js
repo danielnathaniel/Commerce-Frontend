@@ -12,7 +12,7 @@ const GlobalProductStyle = createGlobalStyle`
  h4, img, h5, button{
     opacity: 0.7;
     width:  50%;
-    margin-left: 20%;
+    margin-left: 26%;
  }
 //  https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip
 // https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient

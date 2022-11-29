@@ -5,6 +5,7 @@ const initialState = {};
 // https://www.bezkoder.com/redux-toolkit-example-crud/
 //https://www.softkraft.co/how-to-setup-slices-with-redux-toolkit/
 // comment
+//// https://auth0.com/docs/quickstart/spa/react/01-login#install-the-auth0-react-sdk
 export const cartSlice = createSlice({
   name: "cart",
   initialState,

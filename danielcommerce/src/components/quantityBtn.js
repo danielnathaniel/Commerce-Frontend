@@ -15,8 +15,6 @@ const QuantityButton = ({ id, quantity }) => {
 
     getApiData();
   }, []);
-  console.log("quantity", quantity);
-  // const count = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   return (
     <>

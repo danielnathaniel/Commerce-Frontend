@@ -6,7 +6,6 @@ const NavBar = () => {
   return (
     <div>
       <GlobalProductStyle />
-
       <h1>DANIEL COMMERCE</h1>
       <Profile />
     </div>

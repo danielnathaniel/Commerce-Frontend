@@ -6,7 +6,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import QuantityButton from "../components/quantityBtn";
 import { BASE_URL } from "../utils/api";
 // import CartStyle from "../components/CartStyled";
-
+// https://auth0.com/docs/quickstart/spa/react/01-login#install-the-auth0-react-sdk
 const CartPage = () => {
   const { getAccessTokenSilently } = useAuth0();
 
