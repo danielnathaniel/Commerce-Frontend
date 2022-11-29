@@ -33,8 +33,8 @@ const CartPage = () => {
 
     getApiData();
   }, []);
-
-  return Object.entries(returnedmsg).map(([itemId, data]) => {
+  //developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries - returns an array
+  https: return Object.entries(returnedmsg).map(([itemId, data]) => {
     return (
       <div key={data._id}>
         {/* <CartStyle /> */}
