@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import CartButton from "../components/cartBtn";
 import { BASE_URL } from "../utils/api";
 import GlobalProductStyle from "../components/Container.styled";
-
+//https://medium.com/nerd-for-tech/fetch-api-async-await-in-a-few-bites-6b4f19f7db9e
 const ProductPage = () => {
   console.log("url", BASE_URL);
   const [returnedmsg, setMessage] = useState([]);
   useEffect(() => {
-    // async = must return a promise because
+    // async = must return a promise
     //https://www.robinwieruch.de/react-hooks-fetch-data/
     const getApiData = async () => {
       try {
