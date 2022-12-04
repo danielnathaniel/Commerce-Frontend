@@ -22,16 +22,15 @@ import { Auth0Provider } from "@auth0/auth0-react";
 // };
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <Auth0Provider
-      domain={process.env.REACT_APP_AUTH0DOMAIN}
-      clientId={process.env.REACT_APP_AUTH0CLIENTID}
-      redirectUri={window.location.origin}
-      audience={process.env.REACT_APP_AUTH0AUDIENCE}
-    >
-      <App />
-    </Auth0Provider>
-  </React.StrictMode>
+  <Auth0Provider
+    domain={process.env.REACT_APP_AUTH0DOMAIN}
+    clientId={process.env.REACT_APP_AUTH0CLIENTID}
+    redirectUri={window.location.origin}
+    audience={process.env.REACT_APP_AUTH0AUDIENCE}
+    cacheLocation={"localstorage"}
+  >
+    <App />
+  </Auth0Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

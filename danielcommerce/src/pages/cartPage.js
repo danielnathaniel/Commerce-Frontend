@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
 import { useAuth0 } from "@auth0/auth0-react";
 //import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import styled from "styled-components";
@@ -35,6 +34,7 @@ const CartPage = () => {
   }, []);
   //developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries - returns an array
   https: return Object.entries(returnedmsg).map(([itemId, data]) => {
+    const quantity = parseInt(data.quantity);
     return (
       <div key={data._id}>
         {/* <CartStyle /> */}
@@ -44,7 +44,7 @@ const CartPage = () => {
         </>
         <img src={data.image} alt={data.name} />
         <h4>Quantity: {data.quantity}</h4>
-        <QuantityButton id={data._id} quantity={data.quantity} />
+        <QuantityButton id={data._id} quantity={quantity} />
       </div>
     );
   });

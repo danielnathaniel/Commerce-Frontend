@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState, useEffect } from "react";
-import { updateQuantity, deleteFromCart } from "../features/cart/cartSlice";
+import { Navigate } from "react-router-dom";
 
 const QuantityButton = ({ id, quantity }) => {
   const { getAccessTokenSilently } = useAuth0();
@@ -15,34 +14,28 @@ const QuantityButton = ({ id, quantity }) => {
 
     getApiData();
   }, []);
-  const dispatch = useDispatch();
+  const addQuantity = quantity + 1;
+  const subQuantity = quantity - 1;
+
+  let decrementurl = `/cart/product/${id}/${subQuantity}`;
+  if (quantity === 1) {
+    decrementurl = `/delete/${id}`;
+  }
+
+  // const deletePath
+
   return (
     <>
-      <button
-        onClick={() => {
-          quantity = quantity + 1;
-          window.location.reload(false);
-          dispatch(updateQuantity({ id, token, quantity }));
-        }}
-      >
-        Increase quantity by 1
-      </button>
-      <button
-        onClick={() => {
-          if (quantity > 1) {
-            quantity = quantity - 1;
-            dispatch(updateQuantity({ id, token, quantity }));
-            window.location.reload(false);
-          } else {
-            dispatch(deleteFromCart({ id, token }));
-          }
-        }}
-      >
-        Decrease quantity by 1
-      </button>
-      <button onClick={() => dispatch(deleteFromCart({ id, token }))}>
-        Delete product from cart
-      </button>
+      <a href={`/cart/product/${id}/${addQuantity}`}>
+        <button>Increase quantity by 1</button>
+      </a>
+      <a href={decrementurl}>
+        <button>Decrease quantity by 1</button>
+      </a>
+
+      <a href={`/delete/${id}`}>
+        <button>Delete</button>
+      </a>
     </>
   );
 };
