@@ -1,11 +1,9 @@
-import PropTypes from "prop-types";
-// import { useDispatch } from "react-redux";
-import { addToCart, updateQuantity } from "../features/cart/cartSlice";
-import { useAuth0 } from "@auth0/auth0-react";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-
-const CartButton = ({ id }) => {
+import { Navigate } from "react-router-dom";
+import { BASE_URL } from "../utils/api";
+import { useAuth0 } from "@auth0/auth0-react";
+//do we need componentdidmount
+const DeleteProduct = () => {
   const { getAccessTokenSilently } = useAuth0();
   const navigate = useNavigate();
   const [token, setMessage] = useState("");
@@ -19,12 +17,13 @@ const CartButton = ({ id }) => {
   }, []);
 
   return (
-    <a href={`/addproduct/${id}`}>
-      <button>Add to cart</button>
+    <a href={`/delete/${id}`}>
+      <button>Delete</button>
     </a>
   );
 };
 CartButton.propTypes = {
   id: PropTypes.string.isRequired,
 };
-export default CartButton;
+
+export default DeleteProduct;
