@@ -5,7 +5,7 @@ import {useAuth0} from "@auth0/auth0-react";
 import {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 
-const CartButton = ({id, quantity}) => {
+const CartButton = ({id}) => {
   const {getAccessTokenSilently} = useAuth0();
   const navigate = useNavigate();
   const [token, setMessage] = useState("");
