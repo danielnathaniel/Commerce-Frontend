@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 // import { useDispatch } from "react-redux";
-import { addToCart, updateQuantity } from "../features/cart/cartSlice";
-import { useAuth0 } from "@auth0/auth0-react";
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import {addToCart, updateQuantity} from "../features/cart/cartSlice";
+import {useAuth0} from "@auth0/auth0-react";
+import {useState, useEffect} from "react";
+import {useNavigate} from "react-router-dom";
 
-const CartButton = ({ id }) => {
-  const { getAccessTokenSilently } = useAuth0();
+const CartButton = ({id, quantity}) => {
+  const {getAccessTokenSilently} = useAuth0();
   const navigate = useNavigate();
   const [token, setMessage] = useState("");
   useEffect(() => {
