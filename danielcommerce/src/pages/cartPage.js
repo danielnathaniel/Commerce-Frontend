@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
+import {useState, useEffect} from "react";
+import {useAuth0} from "@auth0/auth0-react";
 //import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import styled from "styled-components";
 import QuantityButton from "../components/quantityBtn";
-import { BASE_URL } from "../utils/api";
+import {BASE_URL} from "../utils/api";
 // import CartStyle from "../components/CartStyled";
 // https://auth0.com/docs/quickstart/spa/react/01-login#install-the-auth0-react-sdk
 const CartPage = () => {
-  const { getAccessTokenSilently } = useAuth0();
+  const {getAccessTokenSilently} = useAuth0();
 
   const [returnedmsg, setMessage] = useState([]);
   useEffect(() => {
@@ -40,7 +40,7 @@ const CartPage = () => {
         {/* <CartStyle /> */}
         {/* <h3>{itemId}</h3> */}
         <>
-          <h4 style={{ color: "blue" }}>{data.name}</h4>
+          <h4 style={{color: "blue"}}>{data.name}</h4>
         </>
         <img src={data.image} alt={data.name} />
         <h4>Quantity: {data.quantity}</h4>

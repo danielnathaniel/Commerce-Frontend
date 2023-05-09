@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
-import { useAuth0 } from "@auth0/auth0-react";
-import { useState, useEffect } from "react";
-import { Navigate } from "react-router-dom";
+import {useAuth0} from "@auth0/auth0-react";
+import {useState, useEffect} from "react";
+import {Navigate} from "react-router-dom";
 
-const QuantityButton = ({ id, quantity }) => {
-  const { getAccessTokenSilently } = useAuth0();
+const QuantityButton = ({id, quantity}) => {
+  const {getAccessTokenSilently} = useAuth0();
   const [token, setMessage] = useState("");
   useEffect(() => {
     const getApiData = async () => {

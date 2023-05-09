@@ -1,6 +1,6 @@
 // import { store } from "./store";
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 // import styled from "styled-components";
 import ProductPage from "./pages/products";
 // import SignUp from "./pages/signupPage";
