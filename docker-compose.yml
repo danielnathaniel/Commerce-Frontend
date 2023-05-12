@@ -1,0 +1,16 @@
+version: "3.4"
+services:
+  commercefrontend:
+    container_name: commercefrontend
+    restart: unless-stopped
+    image: danielyaghoobian/commerce-frontend:latest
+    networks:
+      z_internal:
+    environment:
+      - REACT_APP_BASE_URL=${REACT_APP_BASE_URL}
+      - REACT_APP_AUTH0AUDIENCE=${REACT_APP_AUTH0AUDIENCE}
+      - REACT_APP_AUTH0DOMAIN=${REACT_APP_AUTH0DOMAIN}
+      - REACT_APP_AUTH0CLIENTID=${REACT_APP_AUTH0CLIENTID}
+networks:
+  z_internal:
+    external: true
