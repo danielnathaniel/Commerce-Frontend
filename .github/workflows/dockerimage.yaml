@@ -28,10 +28,10 @@ jobs:
         with:
           context: ./danielcommerce
           build-args: |
-              REACT_APP_BASE_URL=${{secrets.REACT_APP_BASE_URL}}
-              REACT_APP_AUTH0AUDIENCE=${{secrets.REACT_APP_AUTH0AUDIENCE}}
-              REACT_APP_AUTH0DOMAIN=${{secrets.REACT_APP_AUTH0DOMAIN}}
-              REACT_APP_AUTH0CLIENTID=${{secrets.REACT_APP_AUTH0CLIENTID}}
+            BASE_URL=${{secrets.REACT_APP_BASE_URL}}
+            AUTH0AUDIENCE=${{secrets.REACT_APP_AUTH0AUDIENCE}}
+            AUTH0DOMAIN=${{secrets.REACT_APP_AUTH0DOMAIN}}
+            AUTH0CLIENTID=${{secrets.REACT_APP_AUTH0CLIENTID}}
           platforms: linux/amd64,linux/arm64
           push: true
           tags: danielyaghoobian/commerce-frontend:latest
